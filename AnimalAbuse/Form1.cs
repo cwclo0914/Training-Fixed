@@ -132,7 +132,7 @@ namespace AnimalAbuse
                         happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
                         break;
                     case 3: //Mole
-                        happyAnimal[i] = new Mole(formSizeW - Properties.Resources.mole.Width, formSizeH - (Properties.Resources.mole.Height) * 2 / 3, 0);
+                        happyAnimal[i] = new Mole(formSizeW - Properties.Resources.mole.Width, formSizeH - (Properties.Resources.mole.Height) * 2 / 3, 1);
                         happyAnimal[i].Visible = false;
                         happyAnimal[i].Name = "animal" + i.ToString();
                         happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
