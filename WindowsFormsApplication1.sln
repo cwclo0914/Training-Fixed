@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeekOfDay", "WeekOfDay\Week
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication2", "WindowsFormsApplication2\WindowsFormsApplication2.csproj", "{19E38F27-9487-45C8-AB28-DC73B1C78256}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerMeanings", "FlowerMeanings\FlowerMeanings.csproj", "{4480F463-92A7-4FCC-85D3-8F858887F6D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{19E38F27-9487-45C8-AB28-DC73B1C78256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19E38F27-9487-45C8-AB28-DC73B1C78256}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19E38F27-9487-45C8-AB28-DC73B1C78256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4480F463-92A7-4FCC-85D3-8F858887F6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4480F463-92A7-4FCC-85D3-8F858887F6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4480F463-92A7-4FCC-85D3-8F858887F6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4480F463-92A7-4FCC-85D3-8F858887F6D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
