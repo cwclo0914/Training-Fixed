@@ -13,7 +13,12 @@ namespace AnimalAbuse
         public HappyAnimal(int originX, int originY, int speed, Image image)
         {
             base.Location = new Point(originX, originY);
-
+            OriginX = originX;
+            OriginY = originY;
+            Speed = speed;
+            Moving = false;
+            base.Image = image;
+            base.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
         //Properties
@@ -25,8 +30,7 @@ namespace AnimalAbuse
 
         //Methods
         public abstract void Appear();
-        public abstract void Escape();
-        public abstract void Initialise();
-        
+        public abstract void Movement();
+        public abstract int Hit();
     }
 }

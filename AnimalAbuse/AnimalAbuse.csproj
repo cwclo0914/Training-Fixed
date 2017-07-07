@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bird.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cat.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,8 +76,14 @@
     <Compile Include="HappyAnimal.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Mole.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rabbit.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,6 +121,36 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mole.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\mole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\bird.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\cat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\rabbit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\cat_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\cat_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\cat_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\cat_right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
