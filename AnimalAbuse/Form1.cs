@@ -28,6 +28,8 @@ namespace AnimalAbuse
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            random = new Random();
+
             happyAnimal = new HappyAnimal[61];
             timeLeft = 60;
             counter = 0;
@@ -37,39 +39,36 @@ namespace AnimalAbuse
             formSizeW = ClientSize.Width;
 
             //Animal initialisation
-            for (int i = 0; i < 61; i++)
+            for (int i = 0; i < happyAnimal.Length; i++)
             {
-                //Bird
-                happyAnimal[i] = new Bird(0, 0, 10);
-                happyAnimal[i].Visible = false;
-                happyAnimal[i].Name = "animal" + i.ToString();
-                happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
-                if (i < 58)
+                switch(random.Next(0,4))
                 {
-                    //Rabbit
-                    i++;
-                    happyAnimal[i] = new Rabbit(0, formSizeH - Properties.Resources.rabbit.Height, 5);
-                    happyAnimal[i].Visible = false;
-                    happyAnimal[i].Name = "animal" + i.ToString();
-                    happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
-
-                    //Cat
-                    i++;
-                    happyAnimal[i] = new Cat(0, formSizeH - Properties.Resources.cat_up.Height, 10);
-                    happyAnimal[i].Visible = false;
-                    happyAnimal[i].Name = "animal" + i.ToString();
-                    happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
-
-                    //Mole
-                    i++;
-                    happyAnimal[i] = new Mole(formSizeW - Properties.Resources.mole.Width, formSizeH - (Properties.Resources.mole.Height) * 2 / 3, 0);
-                    happyAnimal[i].Visible = false;
-                    happyAnimal[i].Name = "animal" + i.ToString();
-                    happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                    case 0: //Bird
+                        happyAnimal[i] = new Bird(0, 0, 5);
+                        happyAnimal[i].Visible = false;
+                        happyAnimal[i].Name = "animal" + i.ToString();
+                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        break;
+                    case 1: //Rabbit
+                        happyAnimal[i] = new Rabbit(0, formSizeH - Properties.Resources.rabbit.Height, 5);
+                        happyAnimal[i].Visible = false;
+                        happyAnimal[i].Name = "animal" + i.ToString();
+                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        break;
+                    case 2: //Cat
+                        happyAnimal[i] = new Cat(0, formSizeH - Properties.Resources.cat_up.Height, 10);
+                        happyAnimal[i].Visible = false;
+                        happyAnimal[i].Name = "animal" + i.ToString();
+                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        break;
+                    case 3: //Mole
+                        happyAnimal[i] = new Mole(formSizeW - Properties.Resources.mole.Width, formSizeH - (Properties.Resources.mole.Height) * 2 / 3, 0);
+                        happyAnimal[i].Visible = false;
+                        happyAnimal[i].Name = "animal" + i.ToString();
+                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        break;
                 }
             }
-
-            random = new Random();
 
             Controls.AddRange(happyAnimal);
 
@@ -121,7 +120,7 @@ namespace AnimalAbuse
             buttonStart.Enabled = false;
             timeLeft = 60;
             HappyAnimal.Score = 0;
-            labelScore.Text = "得点：0";
+            labelScore.Text = "0";
             labelTimeLeft.Text = timeLeft + "秒";
 
             timerAppear.Start();
@@ -133,7 +132,7 @@ namespace AnimalAbuse
             int n = int.Parse(((PictureBox)sender).Name.Substring(6));
 
             int score = happyAnimal[n].Hit();
-            labelScore.Text = "得点：" + score;
+            labelScore.Text = score.ToString();
         }
 
     }
