@@ -38,40 +38,6 @@ namespace AnimalAbuse
             formSizeH = ClientSize.Height;
             formSizeW = ClientSize.Width;
 
-            //Animal initialisation
-            for (int i = 0; i < happyAnimal.Length; i++)
-            {
-                switch(random.Next(0,4))
-                {
-                    case 0: //Bird
-                        happyAnimal[i] = new Bird(0, 0, 5);
-                        happyAnimal[i].Visible = false;
-                        happyAnimal[i].Name = "animal" + i.ToString();
-                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
-                        break;
-                    case 1: //Rabbit
-                        happyAnimal[i] = new Rabbit(0, formSizeH - Properties.Resources.rabbit.Height, 5);
-                        happyAnimal[i].Visible = false;
-                        happyAnimal[i].Name = "animal" + i.ToString();
-                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
-                        break;
-                    case 2: //Cat
-                        happyAnimal[i] = new Cat(0, formSizeH - Properties.Resources.cat_up.Height, 10);
-                        happyAnimal[i].Visible = false;
-                        happyAnimal[i].Name = "animal" + i.ToString();
-                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
-                        break;
-                    case 3: //Mole
-                        happyAnimal[i] = new Mole(formSizeW - Properties.Resources.mole.Width, formSizeH - (Properties.Resources.mole.Height) * 2 / 3, 0);
-                        happyAnimal[i].Visible = false;
-                        happyAnimal[i].Name = "animal" + i.ToString();
-                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
-                        break;
-                }
-            }
-
-            Controls.AddRange(happyAnimal);
-
         }
 
 
@@ -117,8 +83,12 @@ namespace AnimalAbuse
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            //Animal Initialisation
+            initialise(ref happyAnimal);
+
             buttonStart.Enabled = false;
             timeLeft = 60;
+            counter = 0;
             HappyAnimal.Score = 0;
             labelScore.Text = "0";
             labelTimeLeft.Text = timeLeft + "秒";
@@ -133,6 +103,45 @@ namespace AnimalAbuse
 
             int score = happyAnimal[n].Hit();
             labelScore.Text = score.ToString();
+        }
+
+        private void initialise(ref HappyAnimal[] happyAnimal)
+        {
+            SuspendLayout();
+
+            for (int i = 0; i < happyAnimal.Length; i++)
+            {
+                switch (random.Next(0, 4))
+                {
+                    case 0: //Bird
+                        happyAnimal[i] = new Bird(0, 0, 5);
+                        happyAnimal[i].Visible = false;
+                        happyAnimal[i].Name = "animal" + i.ToString();
+                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        break;
+                    case 1: //Rabbit
+                        happyAnimal[i] = new Rabbit(0, formSizeH - Properties.Resources.rabbit.Height, 5);
+                        happyAnimal[i].Visible = false;
+                        happyAnimal[i].Name = "animal" + i.ToString();
+                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        break;
+                    case 2: //Cat
+                        happyAnimal[i] = new Cat(0, formSizeH - Properties.Resources.cat_up.Height, 10);
+                        happyAnimal[i].Visible = false;
+                        happyAnimal[i].Name = "animal" + i.ToString();
+                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        break;
+                    case 3: //Mole
+                        happyAnimal[i] = new Mole(formSizeW - Properties.Resources.mole.Width, formSizeH - (Properties.Resources.mole.Height) * 2 / 3, 0);
+                        happyAnimal[i].Visible = false;
+                        happyAnimal[i].Name = "animal" + i.ToString();
+                        happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        break;
+                }
+            }
+
+            Controls.AddRange(happyAnimal);
+            ResumeLayout(false);
         }
 
     }
