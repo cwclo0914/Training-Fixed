@@ -19,6 +19,7 @@ namespace AnimalAbuse
             Moving = false;
             base.Image = image;
             base.SizeMode = PictureBoxSizeMode.AutoSize;
+            base.BackColor = Color.Transparent;
         }
 
         //Properties

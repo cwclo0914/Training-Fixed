@@ -113,6 +113,26 @@ namespace AnimalAbuse.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap forest_background_image_hi {
+            get {
+                object obj = ResourceManager.GetObject("forest-background-image-hi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap forest_background_image_hi1 {
+            get {
+                object obj = ResourceManager.GetObject("forest-background-image-hi1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap mole {
             get {
                 object obj = ResourceManager.GetObject("mole", resourceCulture);
