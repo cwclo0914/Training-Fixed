@@ -123,19 +123,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Mole.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Mole.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="pictures\mole.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="pictures\bird.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictures\cat.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="pictures\rabbit.png" />
