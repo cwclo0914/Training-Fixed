@@ -112,9 +112,12 @@ namespace AnimalAbuse
         private void happyAnimal_Click(object sender, EventArgs e)
         {
             int n = int.Parse(((PictureBox)sender).Name.Substring(6));
-
-            int score = happyAnimal[n].Hit();
-            labelScore.Text = score.ToString();
+            
+            if(happyAnimal[n].Visible == true)
+            {
+                int score = happyAnimal[n].Hit();
+                labelScore.Text = score.ToString();
+            }
         }
 
         private void initialise(ref HappyAnimal[] happyAnimal)
