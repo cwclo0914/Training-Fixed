@@ -17,8 +17,8 @@ namespace AnimalAbuse
         public Rabbit(int originX, int originY, int speed)
             : base(originX, originY, speed, Properties.Resources.rabbit)
         {
-            speedX = Speed + randm.Next(0, 40);
-            speedY = Speed + randm.Next(0, 40);
+            speedX = Speed + randm.Next(0, 30);
+            speedY = Speed + randm.Next(0, 30);
         }
 
 
@@ -37,20 +37,20 @@ namespace AnimalAbuse
             //Generating speed
             if (speedX < 0)
             {
-                speedX = -(Speed + randm.Next(0, 40));
+                speedX = -(Speed + randm.Next(0, 30));
             }
             else if (speedX > 0)
             {
-                speedX = Speed + randm.Next(0, 40);
+                speedX = Speed + randm.Next(0, 30);
             }
 
             if (speedY < 0)
             {
-                speedY = -(Speed + randm.Next(0, 40));
+                speedY = -(Speed + randm.Next(0, 30));
             }
             else if (speedY > 0)
             {
-                speedY = Speed + randm.Next(0, 40);
+                speedY = Speed + randm.Next(0, 30);
             }
              
             //Moving
