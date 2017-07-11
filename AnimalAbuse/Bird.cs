@@ -17,8 +17,8 @@ namespace AnimalAbuse
         public Bird(int originX, int originY, int speed)
             : base(originX, originY, speed, Properties.Resources.bird)
         {
-            speedX = Speed + randm.Next(0, 40);
-            speedY = Speed + randm.Next(0, 40);
+            speedX = Speed + randm.Next(0, 30);
+            speedY = Speed + randm.Next(0, 30);
         }
 
 
