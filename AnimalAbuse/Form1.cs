@@ -96,7 +96,19 @@ namespace AnimalAbuse
             timerAppear.Start();
             timerMove.Start();
         }
+        private void happyAnimal_MouseEnter(object sender, EventArgs e)
+        {
+            int n = int.Parse(((PictureBox)sender).Name.Substring(6));
 
+            happyAnimal[n].Cursor = Cursors.Hand;
+        }
+
+        private void happyAnimal_MouseLeave(object sender, EventArgs e)
+        {
+            int n = int.Parse(((PictureBox)sender).Name.Substring(6));
+
+            happyAnimal[n].Cursor = Cursors.Default;
+        }
         private void happyAnimal_Click(object sender, EventArgs e)
         {
             int n = int.Parse(((PictureBox)sender).Name.Substring(6));
@@ -118,24 +130,32 @@ namespace AnimalAbuse
                         happyAnimal[i].Visible = false;
                         happyAnimal[i].Name = "animal" + i.ToString();
                         happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        happyAnimal[i].MouseEnter += new EventHandler(happyAnimal_MouseEnter);
+                        happyAnimal[i].MouseLeave += new EventHandler(happyAnimal_MouseLeave);
                         break;
                     case 1: //Rabbit
                         happyAnimal[i] = new Rabbit(0, formSizeH - Properties.Resources.rabbit.Height, 5);
                         happyAnimal[i].Visible = false;
                         happyAnimal[i].Name = "animal" + i.ToString();
                         happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        happyAnimal[i].MouseEnter += new EventHandler(happyAnimal_MouseEnter);
+                        happyAnimal[i].MouseLeave += new EventHandler(happyAnimal_MouseLeave);
                         break;
                     case 2: //Cat
                         happyAnimal[i] = new Cat(0, formSizeH - Properties.Resources.cat_up.Height, 10);
                         happyAnimal[i].Visible = false;
                         happyAnimal[i].Name = "animal" + i.ToString();
                         happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        happyAnimal[i].MouseEnter += new EventHandler(happyAnimal_MouseEnter);
+                        happyAnimal[i].MouseLeave += new EventHandler(happyAnimal_MouseLeave);
                         break;
                     case 3: //Mole
                         happyAnimal[i] = new Mole(formSizeW - Properties.Resources.mole.Width, formSizeH - (Properties.Resources.mole.Height) * 2 / 3, 1);
                         happyAnimal[i].Visible = false;
                         happyAnimal[i].Name = "animal" + i.ToString();
                         happyAnimal[i].Click += new EventHandler(happyAnimal_Click);
+                        happyAnimal[i].MouseEnter += new EventHandler(happyAnimal_MouseEnter);
+                        happyAnimal[i].MouseLeave += new EventHandler(happyAnimal_MouseLeave);
                         break;
                 }
             }
